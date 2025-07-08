@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+* {
+    font-family: 'Inter', sans-serif;
+}
+body {
+    background: linear-gradient(135deg, #0A0E1A 0%, #1A1F2E 100%);
+    overflow-x: hidden;
+}
+.space-bg {
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(circle at center, #1A1F2E 0%, #0A0E1A 70%, #000000 100%);
+    z-index: -1;
+}
+
+        .nebula {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(50px);
+            opacity: 0.3;
+            animation: nebula-glow 10s ease-in-out infinite;
+        }
+
+        @keyframes nebula-glow {
+
+            0%,
+            100% {
+                opacity: 0.3;
+            }
+
+            50% {
+                opacity: 0.5;
+            }
+        }
+
+        .neon-text {
+            text-shadow:
+                0 0 3px #67E8F9,
+                0 0 6px #67E8F9,
+                0 0 10px #67E8F9;
+        }
+
+        .holographic {
+            background: linear-gradient(45deg, #1E3A8A, #6B7280, #67E8F9, #1E3A8A);
+            background-size: 300% 300%;
+            animation: holographic 6s ease-in-out infinite;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        @keyframes holographic {
+
+            0%,
+            100% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+
+        .glitch {
+            animation: glitch 0.3s infinite;
+        }
+
+        @keyframes glitch {
+
+            0%,
+            100% {
+                transform: translate(0);
+            }
+
+            20% {
+                transform: translate(-2px, 2px);
+            }
+
+            40% {
+                transform: translate(-2px, -2px);
+            }
+
+            60% {
+                transform: translate(2px, 2px);
+            }
+
+            80% {
+                transform: translate(2px, -2px);
+            }
+        }
+
+        .card-3d {
+            transform-style: preserve-3d;
+            transition: transform 0.3s ease;
+        }
+
+        .card-3d:hover {
+            transform: rotateY(5deg) rotateX(5deg);
+        }
+
+        .planet {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle at 30% 30%, #6B7280 0%, #1E3A8A 70%, #0A0E1A 100%);
+            box-shadow: 0 0 20px rgba(103, 232, 249, 0.5);
+            animation: float-planet 12s ease-in-out infinite;
+        }
+
+        @keyframes float-planet {
+
+            0%,
+            100% {
+                transform: translateY(0) translateX(0);
+            }
+
+            25% {
+                transform: translateY(-30px) translateX(15px);
+            }
+
+            50% {
+                transform: translateY(-15px) translateX(-15px);
+            }
+
+            75% {
+                transform: translateY(-40px) translateX(10px);
+            }
+        }
+
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: #FFFFFF;
+            border-radius: 50%;
+            box-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+            animation: twinkle 3s linear infinite;
+            will-change: transform, opacity;
+        }
+
+        @keyframes twinkle {
+
+            0%,
+            100% {
+                opacity: 0.4;
+                transform: scale(0.8);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1.2);
+            }
+        }
+
+        .slide-in {
+            animation: slideIn 0.8s ease-out forwards;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .pulse-border {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pulse-border::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #1E3A8A, #6B7280, #67E8F9, #1E3A8A);
+            border-radius: inherit;
+            animation: pulse-border 3s linear infinite;
+            z-index: -1;
+        }
+
+        @keyframes pulse-border {
+
+            0%,
+            100% {
+                opacity: 0.8;
+            }
+
+            50% {
+                opacity: 0.4;
+            }
+        }
+
+        .morphing-blob {
+            border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+            animation: morph 8s ease-in-out infinite;
+        }
+
+        @keyframes morph {
+            0% {
+                border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+            }
+
+            50% {
+                border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+            }
+
+            100% {
+                border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+            }
+        }
+
+        .text-runner {
+            white-space: nowrap;
+            overflow: hidden;
+            animation: text-run 15s linear infinite;
+        }
+
+        @keyframes text-run {
+            0% {
+                transform: translateX(100%);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        .typewriter {
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 2px solid #67E8F9;
+            display: inline-block;
+            max-width: 100%;
+            color: #67E8F9;
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+
+            0%,
+            100% {
+                border-color: transparent;
+            }
+
+            50% {
+                border-color: #67E8F9;
+            }
+        }
